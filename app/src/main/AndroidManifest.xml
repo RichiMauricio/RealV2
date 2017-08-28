@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mauricio.real">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mensajes.MensajeriaReal"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CardViewMensaje" />
+
+        <service
+            android:name=".services.FirebaseId"
+            android:enabled="true"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"> <!-- Los ID son los tokens q va a tener cada identificador para enviar notoficaciones y mensajes -->
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.FirebaseServiceMensajes"
+            android:enabled="true"
+            android:exported="true"> <!-- Con esto pregunta si hay notificaciones a cada segundo y no a cada minuto y con android:enable indica q el servicio se iniciará cada vez q se reinicé el teléfono y no solo al iniciar la aplicación -->
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Activity_registro" />
+
+        <activity android:name=".CardViewAmigos" />
+        <activity android:name=".actividadDeUsuarios.Activity_principal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CardView_Solicitudes"
+            android:label="@string/title_activity_card_view__solicitudes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Card_view_buscar_usuarios"
+            android:label="@string/title_activity_card_view_buscar_usuarios"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+    </application>
+
+</manifest>
