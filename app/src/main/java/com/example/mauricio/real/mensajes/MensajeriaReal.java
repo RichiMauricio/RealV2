@@ -178,5 +178,4 @@ public class MensajeriaReal extends AppCompatActivity {
     public void setScrollBarChat(){
         rv.scrollToPosition(adapter.getItemCount()-1);  //Ubicar la pantalla al final para leer el último mensaje
     }
-
 }

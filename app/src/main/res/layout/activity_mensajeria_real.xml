@@ -17,10 +17,10 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/btnEnviarMensaje"
-            android:layout_toStartOf="@+id/btnEnviarMensaje"
+            android:layout_toStartOf="@+id/btnselectedphoto"
             android:hint="@string/escibe"
-            android:id="@+id/etEscribirMensaje" />
+            android:id="@+id/etEscribirMensaje"
+            android:layout_toLeftOf="@+id/btnselectedphoto" />
 
         <ImageButton
             android:id="@+id/btnEnviarMensaje"
@@ -29,9 +29,21 @@
             android:hint="Enviar"
             android:background="@color/colorBlack"
             android:src="@android:drawable/ic_media_play"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true" />
+            android:layout_below="@+id/rvMensajes" />
+        <ImageButton
+            android:id="@+id/btnselectedphoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:src="@drawable/ic_gallery"
+            android:layout_below="@+id/rvMensajes"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="39dp"
+            android:layout_marginEnd="39dp" />
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
